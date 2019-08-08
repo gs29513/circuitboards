@@ -1,1 +1,54 @@
+import java.util.Scanner;
+
+public class PoliteCalc {
+
+	
+
+	public static void main(String[] args) {
+		Scanner bucky = new Scanner(System.in);
+			double fnum,snum,symbol;
+			
+			System.out.println("Please enter you first number below");
+			fnum = bucky.nextDouble();
+			System.out.println("Please enter you second number below");
+			snum = bucky.nextDouble(); //throw away the \n not consumed by nextDouble()
+			System.out.println("What operation would you like to perform");
+			System.out.println("type the number of your choice: addition-1, subtraction-2, multiplication-3, divison-4, exponent-5");
+			symbol = bucky.nextDouble();
+			System.out.println("Thank You for using Grace's PoliteCalc");
+				bucky.close();
+			
+			if (symbol == 1) {
+				System.out.println(addnumbers(fnum,snum));
+			} else if (symbol == 2) {
+				System.out.println(subtractnumbers(fnum,snum));
+      		} else if (symbol == 3) {
+				System.out.println(timesnumbers(fnum,snum));
+			}else if (symbol == 4) {
+				System.out.println(dividenumbers(fnum,snum));
+			}else if (symbol == 5) {
+				System.out.println(exponentNumber(snum,fnum));
+			}
+	}
+			public static double addnumbers(double first, double second) {
+				return first + second;
+			} 
+			public static double subtractnumbers(double first, double second) {
+				return first - second;
+			}
+			public static double timesnumbers(double first, double second) {
+				return first * second;
+			}
+			public static double dividenumbers(double first, double second) {
+				return first/second;
+			}
+
+			public static double exponentNumber(double first, double second) {
+				double result = 1;	
+				for(double i=1; i<=first; i=i+1) {
+						result = result * second;
+				}
+				return result;
+}
+}
 
